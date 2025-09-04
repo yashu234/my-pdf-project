@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Book</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .page {
+      width: 80%;
+      margin: 20px 0;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Manual Book</h1>
+
+  <div id="pdf-container" class="page">
+    <!-- Initial image page -->
+    <img id="page-img" src="page1.jpg" alt="Page 1">
+  </div>
+
+  <div class="navigation">
+    <button id="prev" onclick="changePage(-1)">Previous</button>
+    <button id="next" onclick="changePage(1)">Next</button>
+  </div>
+
+  <script>
+    var currentPage = 1;
+    var totalPages = 8;  // Total pages in the manual
+
+    function changePage(direction) {
+      currentPage += direction;
+      if (currentPage < 1) currentPage = 1;
+      if (currentPage > totalPages) currentPage = totalPages;
+
+      // Change the image source based on the current page
+      document.getElementById('page-img').src = `page${currentPage}.jpg`;
+    }
+  </script>
+
+</body>
+</html>
