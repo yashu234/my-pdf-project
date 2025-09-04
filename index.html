@@ -3,69 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual Book</title>
+  <title>Document</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .page {
-      width: 80%;
-      margin: 20px 0;
-      text-align: center;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    .navigation {
-      display: flex;
-      justify-content: space-between;
-      width: 80%;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
+body {
+  background-color: black; /* Set page background to black */
+  color: white; /* Optional: Set text color to white for contrast */
+  margin: 0; /* Remove default margin from body */
+}
+
+.back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
+  width: 100%;
+  min-height: 100vh; /* Ensure each div takes up at least the full viewport height */
+  background-size: contain; /* Ensure the full image is displayed without cropping */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Avoid repeating the background image */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center content vertically and horizontally */
+}
+
+.back1 {
+  background-image: url("background.jpg");
+}
+
+.back2 {
+  background-image: url("background2.jpg");
+}
+
+.back3 {
+  background-image: url("background3.jpg");
+}
+
+.back4 {
+  background-image: url("background4.jpg");
+}
+
+.back5 {
+  background-image: url("background5.jpg");
+}
+
+.back6 {
+  background-image: url("background6.jpg");
+}
+
+.back7 {
+  background-image: url("background7.jpg");
+}
+
+.back8 {
+  background-image: url("background8.jpg");
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
+    background-size: contain; /* Ensure the full image is displayed on smaller screens */
+    min-height: 100vh; /* Keep the height to full screen */
+  }
+}
+
+@media (max-width: 480px) {
+  .back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
+    min-height: 100vh; /* Keep the height to full screen even on very small screens */
+  }
+}
+
+
   </style>
 </head>
 <body>
-
-  <h1>My Manual Book</h1>
-
-  <div id="pdf-container" class="page">
-    <!-- Initial image page -->
-    <img id="page-img" src="page1.jpg" alt="Page 1">
-  </div>
-
-  <div class="navigation">
-    <button id="prev" onclick="changePage(-1)">Previous</button>
-    <button id="next" onclick="changePage(1)">Next</button>
-  </div>
-
-  <script>
-    var currentPage = 1;
-    var totalPages = 8;  // Total pages in the manual
-
-    function changePage(direction) {
-      currentPage += direction;
-      if (currentPage < 1) currentPage = 1;
-      if (currentPage > totalPages) currentPage = totalPages;
-
-      // Change the image source based on the current page
-      document.getElementById('page-img').src = `page${currentPage}.jpg`;
-    }
-  </script>
-
+   <div class="back1"></div>
+   <div class="back2"></div>
+   <div class="back3"></div>
+   <div class="back4"></div>
+   <div class="back5"></div>
+   <div class="back6"></div>
+   <div class="back7"></div>
+   <div class="back8"></div>
 </body>
 </html>
