@@ -10,6 +10,7 @@
       color: white;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     .back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
@@ -31,6 +32,14 @@
     .back6 { background-image: url("background6.jpg"); }
     .back7 { background-image: url("background7.jpg"); }
     .back8 { background-image: url("background8.jpg"); }
+
+    #playButton {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -43,10 +52,23 @@
   <div class="back7"></div>
   <div class="back8"></div>
 
-  <!-- Audio tag with working GitHub Pages link -->
   <audio id="welcomeAudio" src="https://yashu234.github.io/my-pdf-project/welcome.mp3" autoplay></audio>
+  <button id="playButton" onclick="playAudio()">Play Audio</button>
 
-  <!-- Play button in case autoplay is blocked -->
-  <button onclick="document.getElementById('welcomeAudio').play()">Play Audio</button>
+  <script>
+    const audio = document.getElementById("welcomeAudio");
+    const button = document.getElementById("playButton");
+
+    // Try to play audio on load
+    audio.play().catch(() => {
+      // If autoplay is blocked, show the button
+      button.style.display = "inline-block";
+    });
+
+    function playAudio() {
+      audio.play();
+      button.style.display = "none";
+    }
+  </script>
 </body>
 </html>
