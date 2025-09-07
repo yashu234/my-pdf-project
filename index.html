@@ -43,16 +43,8 @@
   <div class="back7"></div>
   <div class="back8"></div>
 
-  <!-- Audio autoplay -->
   <audio id="welcomeAudio" src="welcome.mp3" autoplay></audio>
 
-  <script>
-    window.addEventListener("load", function() {
-      const audio = document.getElementById("welcomeAudio");
-      audio.play().catch(err => {
-        console.warn("Autoplay blocked by browser:", err);
-      });
-    });
-  </script>
+
 </body>
 </html>
