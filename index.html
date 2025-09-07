@@ -3,82 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Manual Book</title>
   <style>
-body {
-  background-color: black; /* Set page background to black */
-  color: white; /* Optional: Set text color to white for contrast */
-  margin: 0; /* Remove default margin from body */
-}
+    body {
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
 
-.back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
-  width: 100%;
-  min-height: 100vh; /* Ensure each div takes up at least the full viewport height */
-  background-size: contain; /* Ensure the full image is displayed without cropping */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Avoid repeating the background image */
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Center content vertically and horizontally */
-}
+    .back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
+      width: 100%;
+      min-height: 100vh;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-.back1 {
-  background-image: url("background.jpg");
-}
-
-.back2 {
-  background-image: url("background2.jpg");
-}
-
-.back3 {
-  background-image: url("background3.jpg");
-}
-
-.back4 {
-  background-image: url("background4.jpg");
-}
-
-.back5 {
-  background-image: url("background5.jpg");
-}
-
-.back6 {
-  background-image: url("background6.jpg");
-}
-
-.back7 {
-  background-image: url("background7.jpg");
-}
-
-.back8 {
-  background-image: url("background8.jpg");
-}
-
-/* Mobile-specific adjustments */
-@media (max-width: 768px) {
-  .back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
-    background-size: contain; /* Ensure the full image is displayed on smaller screens */
-    min-height: 100vh; /* Keep the height to full screen */
-  }
-}
-
-@media (max-width: 480px) {
-  .back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
-    min-height: 100vh; /* Keep the height to full screen even on very small screens */
-  }
-}
-
-
+    .back1 { background-image: url("background.jpg"); }
+    .back2 { background-image: url("background2.jpg"); }
+    .back3 { background-image: url("background3.jpg"); }
+    .back4 { background-image: url("background4.jpg"); }
+    .back5 { background-image: url("background5.jpg"); }
+    .back6 { background-image: url("background6.jpg"); }
+    .back7 { background-image: url("background7.jpg"); }
+    .back8 { background-image: url("background8.jpg"); }
   </style>
 </head>
 <body>
-   <div class="back1"></div>
-   <div class="back2"></div>
-   <div class="back3"></div>
-   <div class="back4"></div>
-   <div class="back5"></div>
-   <div class="back6"></div>
-   <div class="back7"></div>
-   <div class="back8"></div>
+  <div class="back1"></div>
+  <div class="back2"></div>
+  <div class="back3"></div>
+  <div class="back4"></div>
+  <div class="back5"></div>
+  <div class="back6"></div>
+  <div class="back7"></div>
+  <div class="back8"></div>
+
+  <!-- Audio autoplay -->
+  <audio id="welcomeAudio" src="welcome.mp3" autoplay></audio>
+
+  <script>
+    window.addEventListener("load", function() {
+      const audio = document.getElementById("welcomeAudio");
+      audio.play().catch(err => {
+        console.warn("Autoplay blocked by browser:", err);
+      });
+    });
+  </script>
 </body>
 </html>
