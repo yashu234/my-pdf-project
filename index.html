@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Manual Book</title>
+
   <style>
     body {
       background-color: black;
@@ -12,6 +13,7 @@
       padding: 0;
       text-align: center;
     }
+
     .back1, .back2, .back3, .back4, .back5, .back6, .back7, .back8 {
       width: 100%;
       min-height: 100vh;
@@ -22,17 +24,21 @@
       justify-content: center;
       align-items: center;
     }
-    .back1 { background-image: url("background.jpg"); }
-    .back2 { background-image: url("background2.jpg"); }
-    .back3 { background-image: url("background3.jpg"); }
-    .back4 { background-image: url("background4.jpg"); }
-    .back5 { background-image: url("background5.jpg"); }
-    .back6 { background-image: url("background6.jpg"); }
-    .back7 { background-image: url("background7.jpg"); }
-    .back8 { background-image: url("background8.jpg"); }
+
+    /* ✅ Updated image mapping */
+    .back1 { background-image: url("background.png"); }
+    .back2 { background-image: url("background2.png"); }
+    .back3 { background-image: url("background3.png"); }
+    .back4 { background-image: url("background4.png"); }
+    .back5 { background-image: url("background5.png"); }
+    .back6 { background-image: url("background6.png"); }
+    .back7 { background-image: url("background7.png"); }
+    .back8 { background-image: url("background8.png"); }
   </style>
 </head>
+
 <body>
+
   <div class="back1"></div>
   <div class="back2"></div>
   <div class="back3"></div>
@@ -42,19 +48,16 @@
   <div class="back7"></div>
   <div class="back8"></div>
 
-  <audio id="welcomeAudio" src="https://yashu234.github.io/my-pdf-project/welcome.mp3" preload="auto"></audio>
+  <audio id="welcomeAudio" src="welcome.mp3" preload="auto"></audio>
 
   <script>
     const audio = document.getElementById("welcomeAudio");
 
     function playOnFirstInteraction() {
-      audio.play().then(() => {
-        console.log("Audio started");
-      }).catch(err => {
+      audio.play().catch(err => {
         console.log("Playback blocked:", err);
       });
 
-      
       ["click", "touchstart", "scroll", "keydown"].forEach(evt => {
         document.removeEventListener(evt, playOnFirstInteraction);
       });
@@ -64,5 +67,6 @@
       document.addEventListener(evt, playOnFirstInteraction);
     });
   </script>
+
 </body>
 </html>
